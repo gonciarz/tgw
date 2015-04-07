@@ -1,4 +1,6 @@
-import java.awt.Color;
+package pl.gpost.sprite;
+
+import java.awt.*;
 
 /**
  * This class provides the turtle's appearance, the array of pixels
@@ -14,7 +16,7 @@ public class BoxTurtle extends SpritePixels
    // -------- ---------
 
    /*
-    * Default height and width of a rectangle, BoxTurtle's image
+    * Default height and width of a rectangle, pl.gpost.sprite.BoxTurtle's image
     */
    private static final int DEFAULT_BOX_HEIGHT = 30;
    private static final int DEFAULT_BOX_WIDTH = 30;
@@ -28,17 +30,17 @@ public class BoxTurtle extends SpritePixels
 
 
    //
-   // BoxTurtle Constructors
+   // pl.gpost.sprite.BoxTurtle Constructors
    // --------- ------------
 
    /**
-    * Return a BoxTurtle Sprite with specified color and heading.
+    * Return a pl.gpost.sprite.BoxTurtle pl.gpost.Sprite with specified color and heading.
     */
    public BoxTurtle( Color color, double heading )
    { this( DEFAULT_BOX_WIDTH, DEFAULT_BOX_HEIGHT, color, heading ); }
 
    /**
-    * Return a BoxTurtle Sprite with the specified dimensions,
+    * Return a pl.gpost.sprite.BoxTurtle pl.gpost.Sprite with the specified dimensions,
     * color and heading.
     */
    public BoxTurtle( int width, int height, Color color, double heading )
@@ -65,7 +67,7 @@ public class BoxTurtle extends SpritePixels
 
 
    /**
-    * Initialize the pixels composing the Sprite's image, a rectangle.
+    * Initialize the pixels composing the pl.gpost.Sprite's image, a rectangle.
     */
    protected void initSpritePixels( int turtleSideSize )
    {
@@ -85,4 +87,4 @@ public class BoxTurtle extends SpritePixels
    }
 
 
-} // end class BoxTurtle
+} // end class pl.gpost.sprite.BoxTurtle

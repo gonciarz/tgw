@@ -1,3 +1,7 @@
+package pl.gpost.sprite;
+
+import pl.gpost.PixelRectangle;
+
 /**
  * This class provides the turtle's appearance, the array of pixels
  * that make up its image.  In this case, the image is supplied by the
@@ -13,9 +17,9 @@ public class UserTurtle extends SpritePixels
    // -----------
 
    /**
-    * Instantiate this Sprite's image based on the supplied PixelRectangle.
+    * Instantiate this pl.gpost.Sprite's image based on the supplied pl.gpost.PixelRectangle.
     *
-    * It is assumed that the PixelRectangle is oriented north, towards
+    * It is assumed that the pl.gpost.PixelRectangle is oriented north, towards
     * the top of the graphics canvas.
     */
    public UserTurtle( PixelRectangle pixRect )

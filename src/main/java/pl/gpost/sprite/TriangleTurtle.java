@@ -1,4 +1,6 @@
-import java.awt.Color;
+package pl.gpost.sprite;
+
+import java.awt.*;
 
 /**
  * This class provides the turtle's appearance, the array of pixels
@@ -16,7 +18,7 @@ public class TriangleTurtle extends SpritePixels
 
    /*
     * Default height and width of an isosceles triangle for a
-    * TriangleTurtle.  initSpritePixels() assumes that the height is
+    * pl.gpost.sprite.TriangleTurtle.  initSpritePixels() assumes that the height is
     * greater than or equal to the width.  Both the height and the
     * width should be odd numbers so that the image looks good when
     * rotated around its center pixel.
@@ -29,7 +31,7 @@ public class TriangleTurtle extends SpritePixels
 
 
    //
-   // TriangleTurtle Constructors
+   // pl.gpost.sprite.TriangleTurtle Constructors
    // -------------- ------------
 
    public TriangleTurtle( Color color, double heading )
@@ -41,7 +43,7 @@ public class TriangleTurtle extends SpritePixels
 
    /**
     * Initialize the turtle's pixels, an isosceles triangle, into the
-    * provided int[] turtlePixels.  SpritePixels EXPECTS/REQUIRES the
+    * provided int[] turtlePixels.  pl.gpost.sprite.SpritePixels EXPECTS/REQUIRES the
     * image to be on its side, pointing RIGHT/EAST, aligned with the
     * positive X-axis, a heading of mathematical 0 degrees (not to be
     * confused with TurtleSpace's coordinate system where 0 degrees
@@ -64,4 +66,4 @@ public class TriangleTurtle extends SpritePixels
       setLinePixels(x1, bY, x2, cY, BLACK_OPAQUE_PIXEL);
    }
 
-} // end class TriangleTurtle
+} // end class pl.gpost.sprite.TriangleTurtle

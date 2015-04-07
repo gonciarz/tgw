@@ -1,7 +1,9 @@
+package pl.gpost;
+
 import java.lang.Math;
 
 /**
- * A TGPoint is a virtual point, a point in TurtleSpace.  In TurtleSpace,
+ * A pl.gpost.TGPoint is a virtual point, a point in TurtleSpace.  In TurtleSpace,
  * 0.0,0.0  is at the center of the graphics canvas, like the way coordinate
  * spaces are represented in Algebra.  Likewise, TGPoints have real number
  * coordinates.  TGPoints may or may not be visible based upon the current
@@ -11,7 +13,7 @@ import java.lang.Math;
  * TurtleGraphics now works entirely with TGPoints - points in TurtleSpace.
  * Early versions of TG used int primitive values for X and Y coordinates.
  * This approach led to too many visual problems caused by the propagation
- * of rounding off values. TGPoint isolates actual implementation of points
+ * of rounding off values. pl.gpost.TGPoint isolates actual implementation of points
  * to one place which can thus be more easily controlled.
  */
 
@@ -29,33 +31,33 @@ public class TGPoint implements Cloneable
    //
 
    /**
-    * Default TGPoint is [0,0] which is the center of TurtleSpace.
+    * Default pl.gpost.TGPoint is [0,0] which is the center of TurtleSpace.
     */
    public TGPoint() { x = 0.0; y = 0.0; }
    
    /**
-    * Constructs a new TGPoint (a virtual point in TurtleSpace)
+    * Constructs a new pl.gpost.TGPoint (a virtual point in TurtleSpace)
     * based upon provided double values for x and y coordinates.
     */
    public TGPoint( double x, double y )
    { this.x = x; this.y = y; }
 
    /**
-    * Constructs a new TGPoint (a virtual point in TurtleSpace)
+    * Constructs a new pl.gpost.TGPoint (a virtual point in TurtleSpace)
     * based upon provided float values for x and y coordinates.
     */
    public TGPoint( float x, float y )
    { this.x = (double)x; this.y = (double)y; }
 
    /**
-    * Constructs a new TGPoint (a virtual point in TurtleSpace)
+    * Constructs a new pl.gpost.TGPoint (a virtual point in TurtleSpace)
     * based upon provided int values for x and y coordinates.
     */
    public TGPoint( int x, int y )
    { this.x = (double)x; this.y = (double)y; }
 
    /**
-    * Constructs a new TGPoint (a virtual point in TurtleSpace)
+    * Constructs a new pl.gpost.TGPoint (a virtual point in TurtleSpace)
     * based upon provided long values for x and y coordinates.
     */
    public TGPoint( long x, long y )
@@ -137,7 +139,7 @@ public class TGPoint implements Cloneable
 
 
    /**
-    * Creates and returns a copy of this TGPoint.
+    * Creates and returns a copy of this pl.gpost.TGPoint.
     */
    public Object clone()
    {
@@ -210,4 +212,4 @@ public class TGPoint implements Cloneable
    public String toString()
    { return "{" + x + "," + y + "}"; }
 
-} // end class TGPoint
+} // end class pl.gpost.TGPoint

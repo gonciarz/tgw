@@ -1,4 +1,6 @@
-import java.awt.Color;
+package pl.gpost.sprite;
+
+import java.awt.*;
 
 /**
  * This class provides the turtle's appearance, the array of pixels
@@ -28,7 +30,7 @@ public class BallTurtle extends SpritePixels
 
 
    /**
-    * Initialize the pixels composing the Sprite's image, a ball.
+    * Initialize the pixels composing the pl.gpost.Sprite's image, a ball.
     */
    protected void initSpritePixels( int turtleSideSize )
    {
@@ -41,13 +43,13 @@ public class BallTurtle extends SpritePixels
 
    /**
     * Rotate the turtle to a specified heading (radians).
-    * Return true if the Sprite's image changed, false if not.
+    * Return true if the pl.gpost.Sprite's image changed, false if not.
     *
-    * Override SpritePixels.setSpriteHeading() and do nothing.
+    * Override pl.gpost.sprite.SpritePixels.setSpriteHeading() and do nothing.
     * Rotating a ball does not change its image...
     */
    public boolean setSpriteHeading( double newHeading )
    { return false; }
 
 
-} // end class BallTurtle
+} // end class pl.gpost.sprite.BallTurtle

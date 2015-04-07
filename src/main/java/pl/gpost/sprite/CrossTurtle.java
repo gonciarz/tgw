@@ -1,4 +1,6 @@
-import java.awt.Color;
+package pl.gpost.sprite;
+
+import java.awt.*;
 
 /**
  * This class provides the turtle's appearance, the array of pixels
@@ -14,12 +16,12 @@ public class CrossTurtle extends SpritePixels
    // -------- ---------
 
    /**
-    * Default height of a CrossTurtle's image.
+    * Default height of a pl.gpost.sprite.CrossTurtle's image.
     */
    public static final int DEFAULT_CROSS_HEIGHT = 30;
 
    /**
-    * Default width of a CrossTurtle's image.
+    * Default width of a pl.gpost.sprite.CrossTurtle's image.
     */
    public static final int DEFAULT_CROSS_WIDTH = 30;
 
@@ -52,10 +54,10 @@ public class CrossTurtle extends SpritePixels
 
 
    /**
-    * Initialize the pixels composing the Sprite's image, a cross.
+    * Initialize the pixels composing the pl.gpost.Sprite's image, a cross.
     */
    /*
-    * *note* Sprite's image must be heading to the east
+    * *note* pl.gpost.Sprite's image must be heading to the east
     */
    protected void initSpritePixels( int turtleSideSize )
    {
@@ -87,4 +89,4 @@ public class CrossTurtle extends SpritePixels
    }
 
 
-} // end class CrossTurtle
+} // end class pl.gpost.sprite.CrossTurtle

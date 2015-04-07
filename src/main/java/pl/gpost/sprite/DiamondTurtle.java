@@ -1,4 +1,6 @@
-import java.awt.Color;
+package pl.gpost.sprite;
+
+import java.awt.*;
 
 /**
  * This class provides the turtle's appearance, the array of pixels
@@ -14,12 +16,12 @@ public class DiamondTurtle extends SpritePixels
    // -------- ---------
 
    /**
-    * Default height of a DiamondTurtle's image.
+    * Default height of a pl.gpost.sprite.DiamondTurtle's image.
     */
    public static final int DEFAULT_DIAMOND_HEIGHT = 32;
 
    /**
-    * Default width of a DiamondTurtle's image.
+    * Default width of a pl.gpost.sprite.DiamondTurtle's image.
     */
    private static final int DEFAULT_DIAMOND_WIDTH = 20;
 
@@ -30,14 +32,14 @@ public class DiamondTurtle extends SpritePixels
    // ------------
 
    /**
-    * Return a DiamondTurtle Sprite with specified color and heading.
+    * Return a pl.gpost.sprite.DiamondTurtle pl.gpost.Sprite with specified color and heading.
     */
    public DiamondTurtle( Color color, double heading )
    { this( DEFAULT_DIAMOND_WIDTH, DEFAULT_DIAMOND_HEIGHT, color, heading ); }
 
 
    /**
-    * Return a DiamondTurtle Sprite with the specified dimensions,
+    * Return a pl.gpost.sprite.DiamondTurtle pl.gpost.Sprite with the specified dimensions,
     * color and heading.
     */
    public DiamondTurtle( int width, int height, Color color, double heading )
@@ -46,12 +48,12 @@ public class DiamondTurtle extends SpritePixels
 
 
    //
-   // SpritePixels Methods Overridden
+   // pl.gpost.sprite.SpritePixels Methods Overridden
    // ------------ ------- ----------
 
 
    /**
-    * Initialize the pixels composing the Sprite's image, a diamond.
+    * Initialize the pixels composing the pl.gpost.Sprite's image, a diamond.
     */
    protected void initSpritePixels( int turtleSideSize )
    {
@@ -86,4 +88,4 @@ public class DiamondTurtle extends SpritePixels
    }
 
 
-} // end class DiamondTurtle
+} // end class pl.gpost.sprite.DiamondTurtle

@@ -1,4 +1,10 @@
-import java.awt.BorderLayout;
+package pl.gpost;
+
+import pl.gpost.handler.TGKeyHandler;
+import pl.gpost.handler.TGMouseHandler;
+import pl.gpost.sprite.SpritePixels;
+import pl.gpost.sprite.UserTurtle;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
@@ -35,8 +41,8 @@ public class TurtleGraphicsWindow extends Frame
 
    /*
     * The following colors numbers, font numbers, headings,
-    * and turtle shape numbers have been copied from Sprite and
-    * TGCanvas so that classes extending TurtleGraphicsWindow
+    * and turtle shape numbers have been copied from pl.gpost.Sprite and
+    * pl.gpost.TGCanvas so that classes extending pl.gpost.TurtleGraphicsWindow
     * do not have to prefix them with their class names. Think
     * of this as scaffolding for beginners.
     */
@@ -365,7 +371,7 @@ public class TurtleGraphicsWindow extends Frame
 
    /*
     * The following turtle shape symbolic constants have been copied
-    * from Sprite so that classes extending TurtleGraphicsWindow do
+    * from pl.gpost.Sprite so that classes extending pl.gpost.TurtleGraphicsWindow do
     * not have to prefix them with class name.
     */
 
@@ -470,7 +476,7 @@ public class TurtleGraphicsWindow extends Frame
 
 
    /*
-    * Array of SpritePixels objects, images/shapes that Sprites
+    * Array of pl.gpost.sprite.SpritePixels objects, images/shapes that Sprites
     * can take on supplied by a Logo program, see loadshape(). 
     */
    private static SpritePixels[] userSuppliedImages;
@@ -485,7 +491,7 @@ public class TurtleGraphicsWindow extends Frame
    /**
     * Create and return an AWT Frame which contains a
     * turtle graphics canvas.  It comes with a full set
-    * of methods (actually wrappers for Sprite methods)
+    * of methods (actually wrappers for pl.gpost.Sprite methods)
     * for performing Logo-like turtle graphics stuff.
     * It has a default size of symbolic constants
     * DEFAULT_CANVAS_HEIGHT and DEFAULT_CANVAS_WIDTH.
@@ -497,14 +503,14 @@ public class TurtleGraphicsWindow extends Frame
    /**
     * Create and return an AWT Frame which contains a
     * turtle graphics Canvas.  It comes with a full set
-    * of methods (actually wrappers for Sprite methods)
+    * of methods (actually wrappers for pl.gpost.Sprite methods)
     * for performing Logo-like turtle graphics stuff.
     * Its size is provided as parameters.
     */
    public TurtleGraphicsWindow( int width, int height )
    {
       addWindowListener( this );
-      setTitle( "TurtleGraphicsWindow" );
+      setTitle( "pl.gpost.TurtleGraphicsWindow" );
       canvas = new TGCanvas( width, height );
       canvas.setBackground( Color.white );
       canvas.addKeyHandler( this );
@@ -523,13 +529,13 @@ public class TurtleGraphicsWindow extends Frame
 
 
    //
-   // TGKeyHandler Interface Methods
+   // pl.gpost.handler.TGKeyHandler Interface Methods
    // ------------ --------- -------
 
 
    /**
-    * TurtleGraphicsWindow implements the TGKeyHandler interface
-    * and registers with TGCanvas to receive keyboard key events.
+    * pl.gpost.TurtleGraphicsWindow implements the pl.gpost.handler.TGKeyHandler interface
+    * and registers with pl.gpost.TGCanvas to receive keyboard key events.
     * <p>
     * Override this method to do something when a key on the
     * keyboard is pressed while the graphics canvas is active,
@@ -549,8 +555,8 @@ public class TurtleGraphicsWindow extends Frame
 
 
    /**
-    * TurtleGraphicsWindow implements the TGKeyHandler interface
-    * and registers with TGCanvas to receive keyboard key events.
+    * pl.gpost.TurtleGraphicsWindow implements the pl.gpost.handler.TGKeyHandler interface
+    * and registers with pl.gpost.TGCanvas to receive keyboard key events.
     * <p>
     * Override this method to do something when a key which
     * generates a character is pressed and released while the
@@ -569,8 +575,8 @@ public class TurtleGraphicsWindow extends Frame
 
 
    /**
-    * TurtleGraphicsWindow implements the TGKeyHandler interface
-    * and registers with TGCanvas to receive keyboard key events.
+    * pl.gpost.TurtleGraphicsWindow implements the pl.gpost.handler.TGKeyHandler interface
+    * and registers with pl.gpost.TGCanvas to receive keyboard key events.
     * <p>
     * Override this method to do something when a key on the
     * keyboard is released while the graphics canvas is active,
@@ -582,13 +588,13 @@ public class TurtleGraphicsWindow extends Frame
 
 
    //
-   // TGMouseHandler Interface Methods
+   // pl.gpost.handler.TGMouseHandler Interface Methods
    // -------------- --------- -------
 
 
    /**
-    * TurtleGraphicsWindow implements the TGMouseHandler interface
-    * and registers with TGCanvas to receive mouse events.
+    * pl.gpost.TurtleGraphicsWindow implements the pl.gpost.handler.TGMouseHandler interface
+    * and registers with pl.gpost.TGCanvas to receive mouse events.
     * <p>
     * Override this method to do something when the left mouse
     * button is clicked in the graphics canvas while it is active,
@@ -605,8 +611,8 @@ public class TurtleGraphicsWindow extends Frame
 
 
    /**
-    * TurtleGraphicsWindow implements the TGMouseHandler interface
-    * and registers with TGCanvas to receive mouse events.
+    * pl.gpost.TurtleGraphicsWindow implements the pl.gpost.handler.TGMouseHandler interface
+    * and registers with pl.gpost.TGCanvas to receive mouse events.
     * <p>
     * Override this method to do something when the mouse is moved
     * within the graphics canvas while it is active, has focus.
@@ -639,9 +645,9 @@ public class TurtleGraphicsWindow extends Frame
   /*
    * TurtleGraphics Methods
    *
-   * Provided to allow the class extending TurtleGraphicsWindow
+   * Provided to allow the class extending pl.gpost.TurtleGraphicsWindow
    * to invoke them without being forced to obtain and use the
-   * Sprite object to reference/invoke them.
+   * pl.gpost.Sprite object to reference/invoke them.
    */
 
 
@@ -673,7 +679,7 @@ public class TurtleGraphicsWindow extends Frame
 
 
   /**
-   * Clear the graphics canvas area of the TurtleGraphicsWindow.
+   * Clear the graphics canvas area of the pl.gpost.TurtleGraphicsWindow.
    *
    * Note: Clean does not change the current position of
    * the turtle, its heading, the size of the pen it is
@@ -1381,12 +1387,12 @@ public class TurtleGraphicsWindow extends Frame
   
 
    /**
-    * Sets the shape of this Sprite - its pixel image.  Returns
+    * Sets the shape of this pl.gpost.Sprite - its pixel image.  Returns
     * true if shape successfully set, else false for failure.
     * <p>
     * @param shapeNum  small positive number; 0 for default
     *                  turtle image; see constants (e.g., BALL,
-    *                  BOX, etc...) for other Sprite shapes
+    *                  BOX, etc...) for other pl.gpost.Sprite shapes
     * @param params  an optional int array containing sizing
     *                information hints, e.g. radius of a ball,
     *                width and height of a box, etc...
@@ -1427,7 +1433,7 @@ public class TurtleGraphicsWindow extends Frame
   
 
    /**
-    * Sets the shape of this Sprite - its pixel image.
+    * Sets the shape of this pl.gpost.Sprite - its pixel image.
     * <p>
     * @param newSpritePixels 
     * <p>
@@ -1467,11 +1473,11 @@ public class TurtleGraphicsWindow extends Frame
 
 
    /**
-    * Move this Sprite to an absolute display position.
+    * Move this pl.gpost.Sprite to an absolute display position.
     * <p>
-    * Move this Sprite to the x and y coordinates provided in the
-    * TGPoint parameter.
-    * @param newPt a TGPoint objext containing the X-coordinate
+    * Move this pl.gpost.Sprite to the x and y coordinates provided in the
+    * pl.gpost.TGPoint parameter.
+    * @param newPt a pl.gpost.TGPoint objext containing the X-coordinate
     *              and Y-coordinate of destination
     * @see #home
     * @see #setx
@@ -1590,4 +1596,4 @@ public class TurtleGraphicsWindow extends Frame
    { return( (int) turtle.ycor() ); }
 
 
-} // end class TurtleGraphicsWindow
+} // end class pl.gpost.TurtleGraphicsWindow

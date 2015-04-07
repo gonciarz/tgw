@@ -1,4 +1,6 @@
-import java.awt.Color;
+package pl.gpost.sprite;
+
+import java.awt.*;
 
 /**
  * This class provides the turtle's appearance, the array of pixels
@@ -15,7 +17,7 @@ public class ArrowTurtle extends SpritePixels
    private static final int BLACK_OPAQUE_PIXEL = 0xff000000;
 
    /*
-    * Default height and width of an ArrowTurtle's image
+    * Default height and width of an pl.gpost.sprite.ArrowTurtle's image
     */
    public static final int DEFAULT_ARROW_HEIGHT = 30;
    public static final int DEFAULT_ARROW_WIDTH = 30;
@@ -25,13 +27,13 @@ public class ArrowTurtle extends SpritePixels
 
 
    /**
-    * Constructor for an arrow Sprite image of the default height.
+    * Constructor for an arrow pl.gpost.Sprite image of the default height.
     */
    public ArrowTurtle( Color color, double heading )
    { this( DEFAULT_ARROW_WIDTH, DEFAULT_ARROW_HEIGHT, color, heading ); }
 
    /**
-    * Constructor for an arrow Sprite image of a given height and width.
+    * Constructor for an arrow pl.gpost.Sprite image of a given height and width.
     */
    public ArrowTurtle( int width, int height, Color color, double heading )
    { super( width < MINIMUM_ARROW_WIDTH ? MINIMUM_ARROW_WIDTH : width,
@@ -75,4 +77,4 @@ public class ArrowTurtle extends SpritePixels
    }
 
 
-} // end class ArrowTurtle
+} // end class pl.gpost.sprite.ArrowTurtle

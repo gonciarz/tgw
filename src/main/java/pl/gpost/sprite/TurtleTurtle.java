@@ -1,4 +1,6 @@
-import java.awt.Color;
+package pl.gpost.sprite;
+
+import java.awt.*;
 
 /**
  * This class provides the turtle's appearance, the array of pixels
@@ -15,7 +17,7 @@ public class TurtleTurtle extends SpritePixels
    // -------- ---------
 
    /*
-    * Height and width of a square encompassing a TurtleTurtle image.
+    * Height and width of a square encompassing a pl.gpost.sprite.TurtleTurtle image.
     */
    private static final int TURTLE_HEIGHT = 30;
    private static final int TURTLE_WIDTH = 25;
@@ -68,4 +70,4 @@ public class TurtleTurtle extends SpritePixels
       setLinePixels( xb+4, yb+2, xb+6, yb+5, BLACK_OPAQUE_PIXEL);
    }
 
-}  // end class TurtleTurtle
+}  // end class pl.gpost.sprite.TurtleTurtle

@@ -1,20 +1,27 @@
+package pl.gpost;
+
+import pl.gpost.operation.TGFillOp;
+import pl.gpost.operation.TGLabelOp;
+import pl.gpost.operation.TGLineOp;
+import pl.gpost.operation.TGSetPixelsOp;
+import pl.gpost.sprite.*;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.FontMetrics;
-import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.image.MemoryImageSource;
 
 /**
- * Sprite provides support for a turtle's graphics state. This consists of
+ * pl.gpost.Sprite provides support for a turtle's graphics state. This consists of
  * stuff like current heading, current location in TurtleSpace, the set of
  * of pixels that represent it, etc...  Associated with this state are the
  * methods to access and manipulate it, e.g., support for FORWARD, RIGHT,
  * POS, HEADING, etc... Commands and Operators.
  * <p>
- * Sprite must extend Component so that it can use createImage() to supply
- * TGCanvas with its Image.
+ * pl.gpost.Sprite must extend Component so that it can use createImage() to supply
+ * pl.gpost.TGCanvas with its Image.
  * <p>
  * @author Guy Haas
  */
@@ -29,7 +36,7 @@ public class Sprite extends Component
    /**
     * Class' name as String.
     */
-   public static final String CLASS_NAME = "Sprite";
+   public static final String CLASS_NAME = "pl.gpost.Sprite";
 
 
    /**
@@ -83,7 +90,7 @@ public class Sprite extends Component
    public static final int DIAMOND =  6;
 
    /**
-    * Maximum shape number that Sprite knows how to construct.
+    * Maximum shape number that pl.gpost.Sprite knows how to construct.
     */
    public static final int MAX_BUILTIN_SHAPENUM =  6;
 
@@ -233,21 +240,21 @@ public class Sprite extends Component
 
 
    /*
-    * Reference to the graphics canvas this Sprite paints on.  It may
-    * come and go.  When there is no current canvas, all of this Sprite's
+    * Reference to the graphics canvas this pl.gpost.Sprite paints on.  It may
+    * come and go.  When there is no current canvas, all of this pl.gpost.Sprite's
     * state is maintained as if there was one, just no painting takes place.
     */
    private TGCanvas canvas;
 
    /*
-    * stuff related to the pixels composing this Sprite's representation
+    * stuff related to the pixels composing this pl.gpost.Sprite's representation
     */
    private Image spriteImage;
    private MemoryImageSource imageProducer;
    private SpritePixels spritePixels;
 
    /*
-    * State of this Sprite...
+    * State of this pl.gpost.Sprite...
     * - its current location in TurtleSpace,
     * - its heading (in radians, conventional/AWT form),
     * - whether or not it is visible,
@@ -266,7 +273,7 @@ public class Sprite extends Component
    private double curHeading;
 
    /*
-    * true if this Sprite's image is being displayed on the graphics canvas
+    * true if this pl.gpost.Sprite's image is being displayed on the graphics canvas
     */
    private boolean showTurtle;
 
@@ -363,7 +370,7 @@ public class Sprite extends Component
    {
       //GraphicsEnvironment grafEnv = GraphicsEnvironment.getLocalGraphicsEnvironment();
       //Font[] availFonts = grafEnv.getAllFonts();
-      //System.out.println( "Sprite.setlabelfont(): numFonts = " + availFonts.length );
+      //System.out.println( "pl.gpost.Sprite.setlabelfont(): numFonts = " + availFonts.length );
       //for ( int idx=0; idx < availFonts.length; idx++ )
       //   System.out.println( availFonts[idx].getFontName() );
       fontSizes = new short[NUM_FONTS][];
@@ -532,7 +539,7 @@ public class Sprite extends Component
 
 
    /**
-    * Move this Sprite backwards along its current heading.  If the
+    * Move this pl.gpost.Sprite backwards along its current heading.  If the
     * pen is currently in the DOWN position, a line is drawn.
     * <P>
     * Long name for <B>bk()</B>.  Both spellings need to provided for
@@ -546,7 +553,7 @@ public class Sprite extends Component
    public void back( int steps ) { bk( (double) steps ); }
 
    /**
-    * Move this Sprite backwards along its current heading.  If the
+    * Move this pl.gpost.Sprite backwards along its current heading.  If the
     * pen is currently in the DOWN position, a line is drawn.
     * <P>
     * Abbreviation for <B>back()</B>.  Both spellings need to
@@ -569,7 +576,7 @@ public class Sprite extends Component
 
 
    /**
-    * Return an array of the unique colors this Sprite's image is positioned over.
+    * Return an array of the unique colors this pl.gpost.Sprite's image is positioned over.
     * <p>
     * @see #pencolor
     * @see #setpc
@@ -609,7 +616,7 @@ public class Sprite extends Component
 
 
    /**
-    * Return the color this Sprite is sitting on, -1 if there is
+    * Return the color this pl.gpost.Sprite is sitting on, -1 if there is
     * not a current graphics canvas to paint on.
     * <p>
     * @see #pencolor
@@ -628,7 +635,7 @@ public class Sprite extends Component
    /**
     * Fill a bounded area in the graphics image.
     * <p>
-    * Perform a flood-fill operation starting at the Sprite's
+    * Perform a flood-fill operation starting at the pl.gpost.Sprite's
     * current position.  The current pixel, and any of its neighbors
     * that are the same color as it (and any of their neighbors that
     * are the same color as it, etc...) are changed to the current
@@ -648,7 +655,7 @@ public class Sprite extends Component
 
 
    /**
-    * Move this Sprite forward along its current heading.  If the
+    * Move this pl.gpost.Sprite forward along its current heading.  If the
     * pen is currently in the DOWN position, a line is drawn.
     * <P>
     * Abbreviation for <B>forward()</B>.  Both spellings need to
@@ -670,7 +677,7 @@ public class Sprite extends Component
    }
 
    /**
-    * Move this Sprite forward along its current heading.  If the
+    * Move this pl.gpost.Sprite forward along its current heading.  If the
     * pen is currently in the DOWN position, a line is drawn.
     * <P>
     * Long name for <B>fd()</B>.  Both spellings need to provided for
@@ -685,7 +692,7 @@ public class Sprite extends Component
 
 
    /**
-    * Return this Sprite's Image so it can be drawn on a Canvas
+    * Return this pl.gpost.Sprite's Image so it can be drawn on a Canvas
     * by a Graphics object.
     */
    public Image getImage()
@@ -706,7 +713,7 @@ public class Sprite extends Component
 
 
    /**
-    * Return the size of a side of this Sprite's Image.
+    * Return the size of a side of this pl.gpost.Sprite's Image.
     * <p>
     * @see #getImage
     */
@@ -728,14 +735,14 @@ public class Sprite extends Component
 
 
    /**
-    * Return this Sprite's SpritePixels object.
+    * Return this pl.gpost.Sprite's pl.gpost.sprite.SpritePixels object.
     */
    public SpritePixels getSpritePixels()
    { return spritePixels; }
 
 
    /**
-    * Return this Sprite's heading in degrees.
+    * Return this pl.gpost.Sprite's heading in degrees.
     * <P>
     * Logo's TurtleSpace does not match the mathematical
     * convention of measuring angles counter-clockwise from
@@ -761,7 +768,7 @@ public class Sprite extends Component
 
 
    /**
-    * Hide this Sprite; make it invisible.
+    * Hide this pl.gpost.Sprite; make it invisible.
     * <P>
     * Long name for <B>ht()</B>.  Both spellings need to provided for
     * compatibility.
@@ -775,7 +782,7 @@ public class Sprite extends Component
 
 
    /**
-    * Move this Sprite to the center of the display.  If the
+    * Move this pl.gpost.Sprite to the center of the display.  If the
     * pen is currently in the DOWN position, a line is drawn.
     * <P>
     * Home is equivilent to setxy( 0, 0 )
@@ -787,7 +794,7 @@ public class Sprite extends Component
 
 
    /**
-    * Hide this Sprite; make it invisible.
+    * Hide this pl.gpost.Sprite; make it invisible.
     * <P>
     * Abbreviation for <B>hideturtle()</B>.  Both spellings need to
     * provided for compatibility.
@@ -810,7 +817,7 @@ public class Sprite extends Component
    /**
     * Return the current status of the pen.
     * <P>
-    * Return true if this Sprite's pen is down or
+    * Return true if this pl.gpost.Sprite's pen is down or
     * false if it in the up position.
     * <P>
     * @see #pendown
@@ -825,10 +832,10 @@ public class Sprite extends Component
    /**
     * Paints a String of characters onto the graphics canvas.
     * The text is painted in the current pen's color, starting
-    * at the current position of the Sprite.
+    * at the current position of the pl.gpost.Sprite.
     * <p>
     * The text is always painted in the standard horizontal
-    * manner, i.e., the heading of this Sprite is ignored.
+    * manner, i.e., the heading of this pl.gpost.Sprite is ignored.
     * <p>
     * @param text characters to be painted on the display.
     */
@@ -843,10 +850,10 @@ public class Sprite extends Component
 
 
    /**
-    * Rotate this Sprite counterclockwise by the specified
+    * Rotate this pl.gpost.Sprite counterclockwise by the specified
     * angle, measured in degrees.
     * <P>
-    * @param degrees Angle to change this Sprite's heading by.
+    * @param degrees Angle to change this pl.gpost.Sprite's heading by.
     * @see #lt
     */
    public void left( double degrees ) { lt( degrees ); }
@@ -856,13 +863,13 @@ public class Sprite extends Component
 
 
    /**
-    * Rotate this Sprite counterclockwise by the specified
+    * Rotate this pl.gpost.Sprite counterclockwise by the specified
     * angle, measured in degrees.
     * <P>
     * Abbreviation for <B>left()</B>.  Both spellings need
     * to provided for compatibility.
     * <P>
-    * @param degrees Angle to change this Sprite's heading by.
+    * @param degrees Angle to change this pl.gpost.Sprite's heading by.
     * @see #left
     */
    // Logo degrees increase in the clockwise direction.
@@ -890,9 +897,9 @@ public class Sprite extends Component
 
 
    /**
-    * Put this Sprite's pen in the down position.
+    * Put this pl.gpost.Sprite's pen in the down position.
     * <p>
-    * When this Sprite moves, it will leave a trace from its
+    * When this pl.gpost.Sprite moves, it will leave a trace from its
     * current position to its destination (its new position).
     * @see #ispendown
     * @see #pendown
@@ -916,9 +923,9 @@ public class Sprite extends Component
 
 
    /**
-    * Put this Sprite's pen in the down position.
+    * Put this pl.gpost.Sprite's pen in the down position.
     * <p>
-    * When this Sprite moves, it will leave a trace from its
+    * When this pl.gpost.Sprite moves, it will leave a trace from its
     * current position to its destination (its new position).
     * @see #ispendown
     * @see #pd
@@ -929,7 +936,7 @@ public class Sprite extends Component
 
 
    /**
-    * Return the width of the pen this Sprite is currently
+    * Return the width of the pen this pl.gpost.Sprite is currently
     * drawing with.
     * <P>
     * @see #setpensize
@@ -939,9 +946,9 @@ public class Sprite extends Component
 
 
    /**
-    * Put this Sprite's pen in the up position.
+    * Put this pl.gpost.Sprite's pen in the up position.
     * <p>
-    * When this Sprite moves, it will leave no trace.
+    * When this pl.gpost.Sprite moves, it will leave no trace.
     * @see #ispendown
     * @see #pd
     * @see #pendown
@@ -952,9 +959,9 @@ public class Sprite extends Component
 
 
    /**
-    * Put this Sprite's pen in the up position.
+    * Put this pl.gpost.Sprite's pen in the up position.
     * <p>
-    * When this Sprite moves, it will leave no trace.
+    * When this pl.gpost.Sprite moves, it will leave no trace.
     * @see #ispendown
     * @see #pd
     * @see #pendown
@@ -965,10 +972,10 @@ public class Sprite extends Component
 
 
    /**
-    * Rotate this Sprite clockwise by the specified angle,
+    * Rotate this pl.gpost.Sprite clockwise by the specified angle,
     * measured in degrees.
     * <P>
-    * @param degrees Angle to change this Sprite's heading by.
+    * @param degrees Angle to change this pl.gpost.Sprite's heading by.
     * @see #rt
     */
    public void right( double degrees ) { rt( degrees ); }
@@ -978,13 +985,13 @@ public class Sprite extends Component
 
 
    /**
-    * Rotate this Sprite clockwise by the specified angle,
+    * Rotate this pl.gpost.Sprite clockwise by the specified angle,
     * measured in degrees.
     * <P>
     * Abbreviation for <B>right()</B>.  Both spellings need
     * to provided for compatibility.
     * <P>
-    * @param degrees Angle to change this Sprite's heading by.
+    * @param degrees Angle to change this pl.gpost.Sprite's heading by.
     * @see #right
     */
    // Logo degrees increase in the clockwise direction.
@@ -1012,14 +1019,14 @@ public class Sprite extends Component
 
 
    /**
-    * Set/clear the reference to this Sprite's graphics canvas.
+    * Set/clear the reference to this pl.gpost.Sprite's graphics canvas.
     */
    public void setCanvas( TGCanvas canvas )
    { this.canvas = canvas; }
 
 
    /**
-    * Turns this Sprite to the specified absolute heading.
+    * Turns this pl.gpost.Sprite to the specified absolute heading.
     * The heading is specified in degrees (units of 1/360th
     * of a circle) with 0 being North (+Y axis), increasing
     * clockwise.  So, East is 90 degrees, South is 180 degrees,
@@ -1061,7 +1068,7 @@ public class Sprite extends Component
 
 
    /**
-    * Turns this Sprite to the specified absolute heading.
+    * Turns this pl.gpost.Sprite to the specified absolute heading.
     * The heading is specified in degrees (units of 1/360th
     * of a circle) with 0 being North (+Y axis), increasing
     * clockwise.  So, East is 90 degrees, South is 180 degrees,
@@ -1147,7 +1154,7 @@ public class Sprite extends Component
 		          FONT_STYLES[curFontNumber%4],
 			  fontSizes[curFontNumber][size] );
       //FontMetrics fm = getFontMetrics( curFont );
-      //System.out.print( "Sprite.setlabelheight(): height=" + fm.getHeight() );
+      //System.out.print( "pl.gpost.Sprite.setlabelheight(): height=" + fm.getHeight() );
       //System.out.print( "                         height=" + fm.getHeight() );
       //System.out.print( ", maxAscent=" + fm.getMaxAscent() );
       //System.out.println( ", maxDescent=" + fm.getMaxDescent() );
@@ -1155,7 +1162,7 @@ public class Sprite extends Component
   
 
    /**
-    * Sets the color of this Sprite's pen to the supplied number.
+    * Sets the color of this pl.gpost.Sprite's pen to the supplied number.
     * @param logoColorNum  numbers 0-31 are:
     * <p>
     * <pre>
@@ -1200,7 +1207,7 @@ public class Sprite extends Component
 
 
    /**
-    * Sets the color of this Sprite's pen to the supplied number.
+    * Sets the color of this pl.gpost.Sprite's pen to the supplied number.
     * @param colorNum  numbers 0-31 are:
     * <p>
     * <pre>
@@ -1232,7 +1239,7 @@ public class Sprite extends Component
   
 
    /**
-    * Sets the width of this Sprite's pen to the supplied number.
+    * Sets the width of this pl.gpost.Sprite's pen to the supplied number.
     * @param width  small positive number; 1 (or less) results
     * in a single pixel line.
     */
@@ -1248,12 +1255,12 @@ public class Sprite extends Component
   
 
    /**
-    * Sets the shape of this Sprite - its pixel image.  Returns
+    * Sets the shape of this pl.gpost.Sprite - its pixel image.  Returns
     * true if shape successfully set, else false failure.
     * <p>
     * @param shapeNum  small positive number; 0 for default
-    *                  Sprite; see constants (e.g., BALL, BOX,
-    *                  etc...) for other Sprite image shapes...
+    *                  pl.gpost.Sprite; see constants (e.g., BALL, BOX,
+    *                  etc...) for other pl.gpost.Sprite image shapes...
     * @param params  an optional int array containing sizing
     *                information hints, e.g. radius of a ball,
     *                 width and height of a box, etc...
@@ -1337,10 +1344,10 @@ public class Sprite extends Component
   
 
    /**
-    * Sets the shape of this Sprite - its pixel image.
+    * Sets the shape of this pl.gpost.Sprite - its pixel image.
     * <p>
-    * @param newSpritePixels - instance of an object extending SpritePixels
-    *                          which provides an image for a Sprite.
+    * @param newSpritePixels - instance of an object extending pl.gpost.sprite.SpritePixels
+    *                          which provides an image for a pl.gpost.Sprite.
     */
    public void setshape( SpritePixels newSpritePixels )
    {
@@ -1357,9 +1364,9 @@ public class Sprite extends Component
 
 
    /**
-    * Move this Sprite to an absolute display position.
+    * Move this pl.gpost.Sprite to an absolute display position.
     * <p>
-    * Move this Sprite horizontally to a new location
+    * Move this pl.gpost.Sprite horizontally to a new location
     * specified as an X coordinate argument.
     * @param newX the X-coordinate of destination.
     * @see #home
@@ -1386,9 +1393,9 @@ public class Sprite extends Component
 
 
    /**
-    * Move this Sprite to an absolute display position.
+    * Move this pl.gpost.Sprite to an absolute display position.
     * <p>
-    * Move this Sprite to the x and y coordinates provided
+    * Move this pl.gpost.Sprite to the x and y coordinates provided
     * as arguments.
     * @param newX the X-coordinate of destination.
     * @param newY the Y-coordinate of destination.
@@ -1403,11 +1410,11 @@ public class Sprite extends Component
 
 
    /**
-    * Move this Sprite to an absolute display position.
+    * Move this pl.gpost.Sprite to an absolute display position.
     * <p>
-    * Move this Sprite to the x and y coordinates provided in the
-    * TGPoint parameter.
-    * @param newPt a TGPoint objext containing the X-coordinate
+    * Move this pl.gpost.Sprite to the x and y coordinates provided in the
+    * pl.gpost.TGPoint parameter.
+    * @param newPt a pl.gpost.TGPoint objext containing the X-coordinate
     *              and Y-coordinate of destination.
     * @see #home
     * @see #setx
@@ -1429,9 +1436,9 @@ public class Sprite extends Component
 
 
    /**
-    * Move this Sprite to an absolute display position.
+    * Move this pl.gpost.Sprite to an absolute display position.
     * <p>
-    * Move this Sprite vertically to a new location
+    * Move this pl.gpost.Sprite vertically to a new location
     * specified as an Y coordinate argument.
     * @param newY the Y-coordinate of destination.
     * @see #home
@@ -1457,7 +1464,7 @@ public class Sprite extends Component
 
 
    /**
-    * Return true if this Sprite's image is being displayed on
+    * Return true if this pl.gpost.Sprite's image is being displayed on
     * the graphics canvas, else return false.
     * <p>
     * @see #hideturtle
@@ -1470,7 +1477,7 @@ public class Sprite extends Component
 
 
    /**
-    * Show this Sprite; make it visible.
+    * Show this pl.gpost.Sprite; make it visible.
     * <P>
     * Long name for <B>st()</B>.  Both spellings need to provided for
     * compatibility.
@@ -1484,7 +1491,7 @@ public class Sprite extends Component
 
 
    /**
-    * Show this Sprite; make it visible.
+    * Show this pl.gpost.Sprite; make it visible.
     * <P>
     * Abbreviation for <B>showturtle()</B>.  Both spellings need to
     * provided for compatibility.
@@ -1512,7 +1519,7 @@ public class Sprite extends Component
 
 
    /**
-    * Paint the current Sprite Image onto the graphics canvas.
+    * Paint the current pl.gpost.Sprite Image onto the graphics canvas.
     */
    public void stamp()
    {
@@ -1532,12 +1539,12 @@ public class Sprite extends Component
 
 
    /**
-    * Return String representation of this Sprite consisting of
+    * Return String representation of this pl.gpost.Sprite consisting of
     * lots of its state; to be used when debugging.
     */
    public String toString()
    {
-      StringBuffer sb = new StringBuffer( "[Sprite@" );
+      StringBuffer sb = new StringBuffer( "[pl.gpost.Sprite@" );
       sb.append( curPoint.toString() );
       sb.append( " heading=" );
       sb.append( curHeading );
@@ -1559,7 +1566,7 @@ public class Sprite extends Component
 
 
    /**
-    * Return this Sprite's X-coordinate 
+    * Return this pl.gpost.Sprite's X-coordinate
     * @see #setxy
     * @see #setx
     * @see #sety
@@ -1569,7 +1576,7 @@ public class Sprite extends Component
    { return curPoint.xDoubleValue(); }
 
    /**
-    * Return this Sprite's Y-coordinate
+    * Return this pl.gpost.Sprite's Y-coordinate
     * @see #setxy
     * @see #setx
     * @see #sety
@@ -1579,4 +1586,4 @@ public class Sprite extends Component
    { return curPoint.yDoubleValue(); }
 
 
-} // end class Sprite
+} // end class pl.gpost.Sprite

@@ -1,3 +1,7 @@
+package pl.gpost.example;
+
+import pl.gpost.TurtleGraphicsWindow;
+
 class TGWexample2 extends TurtleGraphicsWindow
 {
 
@@ -5,16 +9,16 @@ class TGWexample2 extends TurtleGraphicsWindow
    {
       switch ( keyNum )
       {
-         case TGKeyHandler.DOWN_ARROW:
+         case DOWN_ARROW:
             back( 5 );
             break;
-         case TGKeyHandler.LEFT_ARROW:
+         case LEFT_ARROW:
             left( 5 );
             break;
-         case TGKeyHandler.RIGHT_ARROW:
+         case RIGHT_ARROW:
             right( 5 );
             break;
-         case TGKeyHandler.UP_ARROW:
+         case UP_ARROW:
             forward( 5 );
             break;
       }
@@ -51,4 +55,4 @@ class TGWexample2 extends TurtleGraphicsWindow
       me.setshape( ARROW );
    }
 
-} // end class TGWexample2
+} // end class pl.gpost.example.TGWexample2

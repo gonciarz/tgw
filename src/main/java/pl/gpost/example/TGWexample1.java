@@ -1,3 +1,7 @@
+package pl.gpost.example;
+
+import pl.gpost.TurtleGraphicsWindow;
+
 class TGWexample1 extends TurtleGraphicsWindow
 {
 
@@ -59,4 +63,4 @@ class TGWexample1 extends TurtleGraphicsWindow
       me.drawSomething();
    }
 
-} // end class TGWexample1
+} // end class pl.gpost.example.TGWexample1

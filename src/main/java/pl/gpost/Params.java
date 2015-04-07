@@ -1,3 +1,5 @@
+package pl.gpost;
+
 /**
  * Class with parameters which are needed by multiple TG classes.
  * <p>

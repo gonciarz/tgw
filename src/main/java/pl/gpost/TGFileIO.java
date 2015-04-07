@@ -1,3 +1,5 @@
+package pl.gpost;
+
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -60,12 +62,12 @@ class BMPHeader
       return sb.toString();
    }
 
-} // end class BMPHeader
+} // end class pl.gpost.BMPHeader
 
 
 /**
  * Device-Independent Bitmap Header, which
- * follows the BMPHeader in a .BMP file.
+ * follows the pl.gpost.BMPHeader in a .BMP file.
  */
 class DIBHeader
 {
@@ -119,7 +121,7 @@ class DIBHeader
       return sb.toString();
    }
 
-} // end class DIBHeader
+} // end class pl.gpost.DIBHeader
 
 
 
@@ -134,7 +136,7 @@ public class TGFileIO
    // Symbolic Constants
    // -------- ---------
 
-   public static final String CLASS_NAME = "TGFileIO";
+   public static final String CLASS_NAME = "pl.gpost.TGFileIO";
 
 
    private final static String CANT_CD_TO_Q = "Can't CD to '";
@@ -230,7 +232,7 @@ public class TGFileIO
 
    /*
     * Given an InputStream, use it to read data in .bmp
-    * file format and convert it into a PixelRectangle
+    * file format and convert it into a pl.gpost.PixelRectangle
     */
    private static PixelRectangle bmpFileToPixRect( InputStream is ) throws IOException
    {
@@ -268,8 +270,8 @@ public class TGFileIO
 
 
    /*
-    * Given a BufferedImage representation of a Sprite image, return
-    * a PixelRectangle representation.
+    * Given a BufferedImage representation of a pl.gpost.Sprite image, return
+    * a pl.gpost.PixelRectangle representation.
     */
    private static PixelRectangle getPixRect( BufferedImage bufImg )
    {
@@ -423,7 +425,7 @@ public class TGFileIO
 
    /**
     * Given a file name (of a picture file), read it
-    * in and convert its contents into a PixelRectangle.
+    * in and convert its contents into a pl.gpost.PixelRectangle.
     */
    public static PixelRectangle getPixRect( String fileName )
    {

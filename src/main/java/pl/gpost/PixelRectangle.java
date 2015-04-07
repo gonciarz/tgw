@@ -1,9 +1,11 @@
+package pl.gpost;
+
 import java.awt.Image;
 import java.awt.image.MemoryImageSource;
 import java.awt.Toolkit;
 
 /**
- * PixelRectangle - a rectangular area of pixels.
+ * pl.gpost.PixelRectangle - a rectangular area of pixels.
  * <p>
  * To represent rectangular groups of pixels as a single entitly,
  * two things are needed:
@@ -32,7 +34,7 @@ public class PixelRectangle
 
 
   /**
-   * Instantiate a PixelRectangle given its constituents.
+   * Instantiate a pl.gpost.PixelRectangle given its constituents.
    * @param pixels array of individual pixels in int format
    * @param numCol the number of columns making up a single
    *               row of pixels
@@ -66,7 +68,7 @@ public class PixelRectangle
 
    /**
     * Override Object.toString() for debugging.
-    * Return String with PixelRectangle dimensions in square brackets 
+    * Return String with pl.gpost.PixelRectangle dimensions in square brackets
     * and the first three pixel values enclosed in squiggle brackets,
     * broken down into a,r,g,b components.
     */
@@ -94,4 +96,4 @@ public class PixelRectangle
       return sb.toString();
    }
    
-} // end class PixelRectangle
+} // end class pl.gpost.PixelRectangle

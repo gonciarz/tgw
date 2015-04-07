@@ -1,7 +1,12 @@
+package pl.gpost;
+
+import pl.gpost.handler.TGKeyHandler;
+import pl.gpost.handler.TGMouseHandler;
+import pl.gpost.operation.TGGraphicsOp;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.InputEvent;
@@ -22,7 +27,7 @@ import java.lang.Math;
  * All graphics (pixels painted) are maintained in an Image for redisplay
  * in the event of resizing.
  * <p>
- * Other features of TGCanvas are:
+ * Other features of pl.gpost.TGCanvas are:
  * <p>
  * - the coordinate space is the traditional mathematics; [0,0] is
  *   in the middle of the graphics window.
@@ -52,7 +57,7 @@ public class TGCanvas extends Component
    /**
     * Class name as a String.
     */
-   private static final String CLASS_NAME = "TGCanvas";
+   private static final String CLASS_NAME = "pl.gpost.TGCanvas";
 
 
    /**
@@ -233,14 +238,14 @@ public class TGCanvas extends Component
 
 
    /*
-    * Number of TGKeyHandler objects supported.  As of v.9.29 (09/17/08)
+    * Number of pl.gpost.handler.TGKeyHandler objects supported.  As of v.9.29 (09/17/08)
     * only one object (TGDriver) registers for callbacks.
     */
    private final static int NUM_KEYHANDLERS = 3;
 
 
    /*
-    * Number of TGMouseHandler objects supported. As of v.9.29 (09/17/08)
+    * Number of pl.gpost.handler.TGMouseHandler objects supported. As of v.9.29 (09/17/08)
     * only one object (TGDriver) registers for callbacks.
     */
    private final static int NUM_MOUSEHANDLERS = 3;
@@ -286,12 +291,12 @@ public class TGCanvas extends Component
    private int paintState;
 
    /*
-    * used in paint() to determine which Sprite is being erased/painted
+    * used in paint() to determine which pl.gpost.Sprite is being erased/painted
     */
    private int paintSpriteNum;
 
    /*
-    * these AWT graphics coordinates will be [0,0] for the TGCanvas
+    * these AWT graphics coordinates will be [0,0] for the pl.gpost.TGCanvas
     * coordinate space. *NOTE* i tried making these "float" but when they
     * had a .5 fractional part, pixel choice by AWT was poorer. i ended
     * up with lines with endpoints one pixel apart instead of straight
@@ -303,12 +308,12 @@ public class TGCanvas extends Component
 
    /*
     * in-memory Image for the composite graphics - all the stuff on the
-    * display except for the Sprite(s)
+    * display except for the pl.gpost.Sprite(s)
     */
    private Image graphicsImage;
 
    /*
-    * clipRects used to draw Sprite images
+    * clipRects used to draw pl.gpost.Sprite images
     */
    private Rectangle[] spriteClipRect;
 
@@ -324,7 +329,7 @@ public class TGCanvas extends Component
 
    /*
     * Objects that want their java.awt.event.KeyListener.keyXxx() method
-    * invoked when TGCanvas' KeyListener interface methods are invoked.
+    * invoked when pl.gpost.TGCanvas' KeyListener interface methods are invoked.
     */
    private TGKeyHandler[] keyHandlers;
 
@@ -372,7 +377,7 @@ public class TGCanvas extends Component
       paintState = PAINT_REFRESH;
       gotFocus = false;
 
-   } // end TGCanvas()
+   } // end pl.gpost.TGCanvas()
 
 
 
@@ -505,9 +510,9 @@ public class TGCanvas extends Component
     * the two, so the solution is to use mouseReleased() instead of
     * mouseClicked()
     *
-    * Currently, TGCanvas only supports capturing and propagating a
+    * Currently, pl.gpost.TGCanvas only supports capturing and propagating a
     * left-button release (with no modifiers, e.g. [Shift] key down).
-    * So, if a MouseEvent is received that isn't for TGCanvas, the
+    * So, if a MouseEvent is received that isn't for pl.gpost.TGCanvas, the
     * AWT tree is walked and if a MouseListener is found in a parent
     * component - the MouseEvent is given to it.
     */
@@ -600,7 +605,7 @@ public class TGCanvas extends Component
 
 
    /**
-    * Invoked when a mouse button has been released on TGCanvas.
+    * Invoked when a mouse button has been released on pl.gpost.TGCanvas.
     */
    public void mouseReleased(MouseEvent me)
    {
@@ -625,14 +630,14 @@ public class TGCanvas extends Component
    // ------------------- --------- -------
 
    /**
-    * Invoked when a mouse button is held down on TGCanvas and
+    * Invoked when a mouse button is held down on pl.gpost.TGCanvas and
     * the mouse is moved.
     */
    public void mouseDragged(MouseEvent me) { }
 
 
    /**
-    * Invoked when the mouse is moved around on the TGCanvas
+    * Invoked when the mouse is moved around on the pl.gpost.TGCanvas
     * without any buttons in a depressed state.
     */
    public void mouseMoved(MouseEvent me)
@@ -802,7 +807,7 @@ public class TGCanvas extends Component
     * <p>
     * Something has occured that requires updating the graphics canvas.
     * As an example, TGGraphicsOps have been queued to be performed, or
-    * a Sprite whose image is being displayed has moved or rotated, or
+    * a pl.gpost.Sprite whose image is being displayed has moved or rotated, or
     * the AWT has decided we need to redraw at least some subset of our
     * pixels, e.g., partially covered stuff (by some other application
     * on the desktop) has moved/gone away, etc...
@@ -907,7 +912,7 @@ public class TGCanvas extends Component
    /**
     * Update the displayed image of this Component.
     * <p>
-    * Overridden in TGCanvas to eliminate Component.update()'s
+    * Overridden in pl.gpost.TGCanvas to eliminate Component.update()'s
     * invocation of Graphics.clear().
     */
    public void update(Graphics g) { paint(g); }
@@ -920,7 +925,7 @@ public class TGCanvas extends Component
 
 
    /**
-    * Append a graphics operation, a TGGraphicsOp object, to
+    * Append a graphics operation, a pl.gpost.operation.TGGraphicsOp object, to
     * the queue of outstanding operations.
     */
    public void addGraphOp( TGGraphicsOp grafOp )
@@ -935,7 +940,7 @@ public class TGCanvas extends Component
 
 
    /**
-    * Add an object which implements TGKeyHandler to the list of
+    * Add an object which implements pl.gpost.handler.TGKeyHandler to the list of
     * those that want a callback when a key is pressed while the
     * graphics canvas has focus. The object's keyPressed() method
     * is invoked.
@@ -956,7 +961,7 @@ public class TGCanvas extends Component
 
 
    /**
-    * Add an object which implements TGMouseHandler to the list of
+    * Add an object which implements pl.gpost.handler.TGMouseHandler to the list of
     * those that want a callback.  A callback is performed when the
     * graphics canvas has focus and 
     * <ul>
@@ -985,12 +990,12 @@ public class TGCanvas extends Component
 
 
    /**
-    * Add a new Sprite, start displaying its image on the
+    * Add a new pl.gpost.Sprite, start displaying its image on the
     * graphics canvas.
     */
    public void addSprite( Sprite sprite )
    {
-      //System.out.println( "TGCanvas.addSprite(): " + sprite );
+      //System.out.println( "pl.gpost.TGCanvas.addSprite(): " + sprite );
       int openIdx = -1;
       for (int i=sprites.length-1; i >= 0; i--)
       {
@@ -1191,8 +1196,8 @@ public class TGCanvas extends Component
 
 
    /**
-    * Remove an object from TGCanvas' list of those wanting
-    * their keyPressed() method invoked when TGCanvas
+    * Remove an object from pl.gpost.TGCanvas' list of those wanting
+    * their keyPressed() method invoked when pl.gpost.TGCanvas
     * receives this Event.
     */
    public void removeKeyHandler( TGKeyHandler kh )
@@ -1204,7 +1209,7 @@ public class TGCanvas extends Component
 
 
    /**
-    * Remove an object from TGCanvas' list of those wanting
+    * Remove an object from pl.gpost.TGCanvas' list of those wanting
     * their mouseClicked() and mouseMoved() methods invoked
     * when we receive these Events.
     */
@@ -1217,19 +1222,19 @@ public class TGCanvas extends Component
 
 
    /**
-    * Remove the specified Sprite from the list of sprites
+    * Remove the specified pl.gpost.Sprite from the list of sprites
     * whose images are displayed on the graphics canvas.
     */
    public void removeSprite( Sprite sprite )
    {
-      //System.out.println( "TGCanvas.removeSprite(): " + sprite );
+      //System.out.println( "pl.gpost.TGCanvas.removeSprite(): " + sprite );
       for (int i=sprites.length-1; i >= 0; i--)
          if ( sprites[i] == sprite )
          {
             sprites[i] = null;
             return;
          }
-      sysErr( "removeSprite: Sprite missing!" );
+      sysErr( "removeSprite: pl.gpost.Sprite missing!" );
    }
 
 
@@ -1269,4 +1274,4 @@ public class TGCanvas extends Component
    }
 
 
-} // end class TGCanvas
+} // end class pl.gpost.TGCanvas
