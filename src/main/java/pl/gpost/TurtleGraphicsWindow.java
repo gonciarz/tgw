@@ -1229,21 +1229,21 @@ public class TurtleGraphicsWindow extends Frame
      *                   and font style
      *                   <p/>
      *                   <pre>
-     *                   Number   Font         Style
-     *                   ------   ----------   -----------
-     *                      0     Courier      Plain
-     *                      1     Courier      Bold
-     *                      2     Courier      Italic
-     *                      3     Courier      Bold Italic
-     *                      4     Sans Serif   Plain
-     *                      5     Sans Serif   Bold
-     *                      6     Sans Serif   Italic
-     *                      7     Sans Serif   Bold Italic
-     *                      8     Serif        Plain
-     *                      9     Serif        Bold
-     *                     10     Serif        Italic
-     *                     11     Serif        Bold Italic
-     *                   </pre>
+     *                                                                         Number   Font         Style
+     *                                                                         ------   ----------   -----------
+     *                                                                            0     Courier      Plain
+     *                                                                            1     Courier      Bold
+     *                                                                            2     Courier      Italic
+     *                                                                            3     Courier      Bold Italic
+     *                                                                            4     Sans Serif   Plain
+     *                                                                            5     Sans Serif   Bold
+     *                                                                            6     Sans Serif   Italic
+     *                                                                            7     Sans Serif   Bold Italic
+     *                                                                            8     Serif        Plain
+     *                                                                            9     Serif        Bold
+     *                                                                           10     Serif        Italic
+     *                                                                           11     Serif        Bold Italic
+     *                                                                         </pre>
      * @see #label
      * @see #labelwidth
      * @see #setlabelheight
@@ -1289,21 +1289,21 @@ public class TurtleGraphicsWindow extends Frame
      *                 value
      *                 <p/>
      *                 <pre>
-     *                 Number Color        Number Color        Number Color
-     *                 ------ ----------   ------ ----------   ------ ---------
-     *                    0   black          11   aqua           22   gold
-     *                    1   blue           12   salmon         23   lightgray
-     *                    2   green          13   purple         24   peru
-     *                    3   cyan           14   orange         25   wheat
-     *                    4   red            15   grey           26   palegreen
-     *                    5   magenta        16   navy           27   lightblue
-     *                    6   yellow         17   skyblue        28   khaki
-     *                    7   white          18   lime           29   pink
-     *                    8   brown          19   steelblue      30   lawngreen
-     *                    9   light brown    20   chocolate      31   olive
-     *                   10   forest         21   purple
-     *                 </pre>
-     *                 <p/>
+     *                                                                 Number Color        Number Color        Number Color
+     *                                                                 ------ ----------   ------ ----------   ------ ---------
+     *                                                                    0   black          11   aqua           22   gold
+     *                                                                    1   blue           12   salmon         23   lightgray
+     *                                                                    2   green          13   purple         24   peru
+     *                                                                    3   cyan           14   orange         25   wheat
+     *                                                                    4   red            15   grey           26   palegreen
+     *                                                                    5   magenta        16   navy           27   lightblue
+     *                                                                    6   yellow         17   skyblue        28   khaki
+     *                                                                    7   white          18   lime           29   pink
+     *                                                                    8   brown          19   steelblue      30   lawngreen
+     *                                                                    9   light brown    20   chocolate      31   olive
+     *                                                                   10   forest         21   purple
+     *                                                                 </pre>
+     *
      *                 Color numbers greater than 31 will be treated as RGB
      *                 values. Assuming bits are numbered 0-31, left to right,
      *                 the red component is in bits 8-15, the green component
@@ -1359,21 +1359,21 @@ public class TurtleGraphicsWindow extends Frame
      *                 value
      *                 <p/>
      *                 <pre>
-     *                 Number Color        Number Color        Number Color
-     *                 ------ ----------   ------ ----------   ------ ---------
-     *                    0   black          11   aqua           22   gold
-     *                    1   blue           12   salmon         23   lightgray
-     *                    2   green          13   purple         24   peru
-     *                    3   cyan           14   orange         25   wheat
-     *                    4   red            15   grey           26   palegreen
-     *                    5   magenta        16   navy           27   lightblue
-     *                    6   yellow         17   skyblue        28   khaki
-     *                    7   white          18   lime           29   pink
-     *                    8   brown          19   steelblue      30   lawngreen
-     *                    9   light brown    20   chocolate      31   olive
-     *                   10   forest         21   purple
-     *                 </pre>
-     *                 <p/>
+     *                                                                 Number Color        Number Color        Number Color
+     *                                                                 ------ ----------   ------ ----------   ------ ---------
+     *                                                                    0   black          11   aqua           22   gold
+     *                                                                    1   blue           12   salmon         23   lightgray
+     *                                                                    2   green          13   purple         24   peru
+     *                                                                    3   cyan           14   orange         25   wheat
+     *                                                                    4   red            15   grey           26   palegreen
+     *                                                                    5   magenta        16   navy           27   lightblue
+     *                                                                    6   yellow         17   skyblue        28   khaki
+     *                                                                    7   white          18   lime           29   pink
+     *                                                                    8   brown          19   steelblue      30   lawngreen
+     *                                                                    9   light brown    20   chocolate      31   olive
+     *                                                                   10   forest         21   purple
+     *                                                                 </pre>
+     *
      *                 Color numbers greater than 31 will be treated as RGB
      *                 values. Assuming bits are numbered 0-31, left to right,
      *                 the red component is in bits 8-15, the green component
@@ -1444,16 +1444,16 @@ public class TurtleGraphicsWindow extends Frame
      *                 image via loadShape() method
      *                 <p/>
      *                 <pre>
-     *                 Number  Shape
-     *                 ------  --------
-     *                    0    Turtle
-     *                    1    Arrow
-     *                    2    Ball
-     *                    3    Box
-     *                    4    Cross
-     *                    5    Triangle
-     *                    6    Diamond
-     *                 </pre>
+     *                                                                 Number  Shape
+     *                                                                 ------  --------
+     *                                                                    0    Turtle
+     *                                                                    1    Arrow
+     *                                                                    2    Ball
+     *                                                                    3    Box
+     *                                                                    4    Cross
+     *                                                                    5    Triangle
+     *                                                                    6    Diamond
+     *                                                                 </pre>
      * @see #loadshape
      * @see #stamp
      * @see #ARROW
@@ -1483,16 +1483,16 @@ public class TurtleGraphicsWindow extends Frame
      *                 width and height of a box, etc...
      *                 <p/>
      *                 <pre>
-     *                 Number  Shape      Optional Size Parameters
-     *                 ------  --------   ------------------------
-     *                    0    Turtle
-     *                    1    Arrow      width, height
-     *                    2    Ball       diameter
-     *                    3    Box        width, height
-     *                    4    Cross      width, height
-     *                    5    Triangle   width, height
-     *                    6    Diamond    width, height
-     *                 </pre>
+     *                                                                 Number  Shape      Optional Size Parameters
+     *                                                                 ------  --------   ------------------------
+     *                                                                    0    Turtle
+     *                                                                    1    Arrow      width, height
+     *                                                                    2    Ball       diameter
+     *                                                                    3    Box        width, height
+     *                                                                    4    Cross      width, height
+     *                                                                    5    Triangle   width, height
+     *                                                                    6    Diamond    width, height
+     *                                                                 </pre>
      * @see #loadshape
      * @see #stamp
      * @see #ARROW
