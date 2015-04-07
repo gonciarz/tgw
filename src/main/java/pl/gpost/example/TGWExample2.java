@@ -2,7 +2,7 @@ package pl.gpost.example;
 
 import pl.gpost.TurtleGraphicsWindow;
 
-class TGWexample2 extends TurtleGraphicsWindow {
+class TGWExample2 extends TurtleGraphicsWindow {
 
     public void tgKeyReleased(int keyNum) {
         switch (keyNum) {
@@ -43,7 +43,7 @@ class TGWexample2 extends TurtleGraphicsWindow {
 
 
     public static void main(String[] args) {
-        TGWexample2 me = new TGWexample2();
+        TGWExample2 me = new TGWExample2();
         me.setpensize(8);
         me.setshape(ARROW);
     }

@@ -2,7 +2,7 @@ package pl.gpost.example;
 
 import pl.gpost.TurtleGraphicsWindow;
 
-class TGWexample3 extends TurtleGraphicsWindow {
+class TGWExample3 extends TurtleGraphicsWindow {
 
     private void drawScene() {
         boolean status = loadpicture("Clouds.jpg");
@@ -22,7 +22,7 @@ class TGWexample3 extends TurtleGraphicsWindow {
 
 
     public static void main(String[] args) {
-        TGWexample3 me = new TGWexample3();
+        TGWExample3 me = new TGWExample3();
         me.drawScene();
     }
 

@@ -2,9 +2,9 @@ package pl.gpost.example;
 
 import pl.gpost.TurtleGraphicsWindow;
 
-class TGWexample1 extends TurtleGraphicsWindow {
+class TGWExample1 extends TurtleGraphicsWindow {
 
-    public TGWexample1() {
+    public TGWExample1() {
         super(600, 600);
     }
 
@@ -51,9 +51,9 @@ class TGWexample1 extends TurtleGraphicsWindow {
     }
 
     public static void main(String[] args) {
-        TGWexample1 me = new TGWexample1();
+        TGWExample1 me = new TGWExample1();
         me.hideturtle();
         me.drawSomething();
     }
 
-} // end class pl.gpost.example.TGWexample1
+}
